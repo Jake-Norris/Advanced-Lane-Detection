@@ -62,7 +62,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 I created a function `undistort` that calls `cv2.undistort()` with the image and the camera matrix and distortion coefficents calculated using `cv2.calibrateCamera()`. The output results in an image like:
 
-![out image](undistorted_test_image.jpg)
+![out image](undistored_test_image.jpg)
 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
