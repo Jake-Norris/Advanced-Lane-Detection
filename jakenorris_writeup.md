@@ -105,7 +105,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 Inside of the cells under `Function to detect lane pixels and and fit to find lane boundary`, I created a function `find_lane_pixels()` that finds the lane pixels using sliding windows and `fit_first_polynomial()` that calls the previous function and fits a polynomial to it (also converting to real world space so that radius of curvature and distance from center can be calculated. Here is an example of the output from the function (this also includes boxes and the yellow lines are the polynomials, which are not put on the image in the actual implementation):
 
-![alt text](binary_warped_fit.jpg)
+![alt text](binary_warped_fit.png)
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
