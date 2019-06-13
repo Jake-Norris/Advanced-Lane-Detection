@@ -61,6 +61,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 ![alt text](test_images/straight_lines1.jpg)
 
 I created a function `undistort` that calls `cv2.undistort()` with the image and the camera matrix and distortion coefficents calculated using `cv2.calibrateCamera()`. The output results in an image like:
+
 ![out image](undistorted_test_image.jpg)
 
 
@@ -68,7 +69,7 @@ I created a function `undistort` that calls `cv2.undistort()` with the image and
 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps inside of cell titled `Function that creates threshold binary images`). I do this by first converting to HLS color space, and then extracting the S and L layers. I then applied the sobel function in the x direction to the L layer to get the gradients and checked for the threshold. Then I checked for the S threshold and combined the two binary images (from gradient and color), which was returned from the function. Here's an example of my output for this step. (Note that in the actual implementation of the code, the image is already transformed to a birds eye view before being converted to binary)
 
-![alt text][./binary_test_image.jpg]
+![alt text](binary_test_image.jpg)
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
