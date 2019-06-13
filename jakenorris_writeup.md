@@ -58,10 +58,10 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text][./test_images/straight_lines1.jpg]
+![alt text](test_images/straight_lines1.jpg)
 
 I created a function `undistort` that calls `cv2.undistort()` with the image and the camera matrix and distortion coefficents calculated using `cv2.calibrateCamera()`. The output results in an image like:
-![out image][./undistorted_test_image.jpg]
+![out image](undistorted_test_image.jpg)
 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
@@ -98,13 +98,13 @@ This resulted in the following source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![alt text][./warped_test_image.jpg]
+![alt text](warped_test_image.jpg)
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Inside of the cells under `Function to detect lane pixels and and fit to find lane boundary`, I created a function `find_lane_pixels()` that finds the lane pixels using sliding windows and `fit_first_polynomial()` that calls the previous function and fits a polynomial to it (also converting to real world space so that radius of curvature and distance from center can be calculated. Here is an example of the output from the function (this also includes boxes and the yellow lines are the polynomials, which are not put on the image in the actual implementation):
 
-![alt text][./binary_warped_fit.jpg]
+![alt text](binary_warped_fit.jpg)
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -114,7 +114,7 @@ I did this using the formula for Radius of convergence in the cell under `Determ
 
 I implemented the `draw_lanes()` in the next code cell which adds the text and overlays the image that has the lane lines colored and the green polygon by lowering the opacity of the overlay image. All of the previous functions are called inside of `process_image()`, which is the pipeline that takes in an image and uses global variables for the camera matrix and distortion coefficients (they were originally parameters, but for ease of use with the video functions I removed them so that the image would be the only parameter). This is then called for each of the test images as well as with the video file in the final cells in the notebook. Here is an example of one of the test images in the `output_images` directory:
 
-![alt text][./output_images/output1.jpg]
+![alt text](output_images/output1.jpg)
 
 ---
 
